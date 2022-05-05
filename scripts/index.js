@@ -18,7 +18,7 @@ setInterval(() => {
         `
 }, 1000)
 
-console.log(window.innerHeight)
+console.log(window.innerWidth)
 
 //navbar
 
