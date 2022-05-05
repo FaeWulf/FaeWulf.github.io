@@ -1,0 +1,20 @@
+span._cyan {
+    color: #449dab;
+}
+
+span._gold {
+    color: gold;
+    font-family: 'Fira Code', monospace;
+}
+
+a.tlink {
+    color: #7da6ff;
+}
+
+span.b1 {
+    font-weight: bold;
+}
+
+span._green {
+    color: #9ece6a;
+}

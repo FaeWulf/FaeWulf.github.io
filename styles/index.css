@@ -1,0 +1,274 @@
+body {
+    margin: 0;
+    background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    background-size: 100% 100%;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+}
+
+
+p {
+    margin-top: 0.2em;
+    margin-bottom: 0em;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    margin-top: 0.25em;
+}
+
+.dropdown {
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #9ece6a;
+    color: #1a1b26;
+    transition: all 0.25s ease-in-out;
+    display: inline-flex;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+@font-face {
+    font-family: 'Material Icons Round';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialiconsround/v102/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmP.woff2) format('woff2');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Space+Mono:wght@700&display=swap');
+
+.material-icons-round {
+    font-family: 'Material Icons Round';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    margin-top: 0em;
+    padding-right: 0.2em;
+    padding-left: 3px;
+}
+
+.nav-bar {
+    background-color: rgba(2, 19, 26);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo {
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+span.link-button {
+
+     
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+    border-radius: 12px;
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #9ece6a;
+    color: #1a1b26;
+    text-align: center;
+    transition: all 0.25s ease-in-out;
+    display: inline-flex;
+    font-size: 24px;
+    text-align: center;
+}
+
+a.link-button {
+    font-family: 'Merriweather Sans', sans-serif;
+    background-color: #9ece6a;
+    color: #1a1b26;
+    display: block;
+    border: solid 2px #a7a6a61e;
+    transition: box-shadow 1s ease-in;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+    float: right;
+    padding-right: 3px;
+    transition: all 0.25s ease-in-out;
+    display: inline-flex;
+    font-size: 19px;
+    text-align: center;
+}
+
+#navBarDate {
+     
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #0db9d7;
+    background-color: rgba(2, 19, 26);
+    display: inline-flex;
+    font-size: 17px;
+    margin-top: 0.2rem;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+#navBarClock {
+     
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+
+    font-family: 'Merriweather Sans', sans-serif;
+    display: inline-flex;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+#navBarSetting {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    background-color: rgba(2, 19, 26, 00);
+    border: none;
+    font-family: 'Merriweather Sans', sans-serif;
+    display: inline-flex;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    transition: all 0.4s linear;
+}
+
+#navBarSetting:hover {
+    transform: rotate(90deg);
+}
+
+
+
+div.GLbutton {
+    font-family: 'Duru Sans', sans-serif;
+    color: #787c99;
+    font-size: 100px;
+    font-weight: bolder;
+    position: absolute;
+    right: 50%;
+    top: 30%;
+}
+
+div.app {
+
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+     
+    display: inline-flex;
+    color: #f9f9f9;
+    margin-left: 30%;
+}
+
+div.app span.item {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #b2e5dd;
+    cursor: pointer;
+    margin-right: 0.7rem;
+    margin-left: 0.7rem;
+}
+
+div.app span.glow {
+    background: linear-gradient(120deg, #4fe49c, #45abd6, #4fe49c);
+    background-size: 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 14px;
+    animation: hueRotate 1s linear infinite;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@keyframes hueRotate {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+@keyframes hueRotate {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
+}

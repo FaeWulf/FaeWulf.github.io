@@ -1,0 +1,59 @@
+input#audioInput {
+    display: none;
+}
+
+audio {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    height: 30px;
+    width: calc(100% - 70px);
+}
+
+#visualizer {
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    left: 10px;
+    bottom: 50px;
+}
+
+button#getFile {
+    background-color: #02131a;
+    border: none;
+    border-radius: 13px;
+    position: absolute;
+    right: 4px;
+    bottom: 7px;
+    cursor: pointer;
+}
+
+.vbutton {
+    background-color: #02131a;
+    border: none;
+    border-radius: 13px;
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    cursor: pointer;
+}
+
+.coverImg {
+    position: absolute;
+    width: 80%;
+    margin-left: 8%;
+}
+
+.coverImg.animate {
+  -webkit-animation: infinite-spinning 60s infinite linear;
+  animation: infinite-spinning 60s infinite linear;
+}
+
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

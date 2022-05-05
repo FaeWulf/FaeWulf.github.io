@@ -1,0 +1,147 @@
+.terminal-window {
+    text-align: left;
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    min-width: 20%;
+    min-height: 30%;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.35);
+}
+
+.terminal-window header {
+    background: #1a1b26;
+    height: 30px;
+    border-radius: 8px 8px 0 0;
+    padding-left: 10px;
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+.terminal-window header .window_button {
+
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+     
+    width: 12px;
+    height: 12px;
+    margin: 10px 4px 0 0;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+.terminal-window.minimize {
+    opacity: 0;
+    display: none;
+}
+
+.terminal-window header .window_button.green {
+    background: #9ece6a;
+}
+
+.terminal-window header .window_button.yellow {
+    background: #e0af68;
+}
+
+.terminal-window header .window_button.red {
+    background: #f7768e;
+}
+
+.terminal-window header .window_button.title {
+    color: antiquewhite;
+    margin-left: 35%;
+    margin-top: 0rem;
+    align-content: center;
+}
+
+.terminal-window section.terminal {
+    color: white;
+    font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    font-size: 11pt;
+    background: #30353A99;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    bottom: 0;
+    overflow: auto;
+}
+
+.terminal-window section.terminal .typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.terminal-data {
+    display: none;
+}
+
+.terminal-window .gray {
+    color: gray;
+}
+
+.terminal-window .green {
+    color: green;
+}

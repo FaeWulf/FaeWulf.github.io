@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles/index.css" />
+  <link rel="stylesheet" href="/styles/window.css" />
+  <link rel="stylesheet" href="/styles/visualizer.css" />
+  <link rel="stylesheet" href="/styles/terminal.css" />
+  <link rel="stylesheet" href="/styles/background.css" />
+  <link rel="stylesheet" href="/styles/setting.css" />
+  <title>Feawulf aka OpenGiaLam</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa|Andika New Basic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" />
+  <link href="https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <!--background-->
+  <div class="bg">
+    <div class="rotate">
+    </div>
+  </div>
+  <!--navigator-->
+  <header>
+    <div class="nav-bar">
+      <button class="dropdown" style="margin-top: 0.4rem;">&nbsp;&nbsp;&nbsp;λ&nbsp;&nbsp;&nbsp;</button>
+
+      <span style="font-size: 27px; -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;">&nbsp|</span>
+      <div class="app">
+        <span id="Item_terminal" class="item glow">Terminal</span>
+        <span id="Item_Visualizer" class="item">Visualizer</span>
+        <span id="Item_Matrix" class="item">Matrix</span>
+        <span id="Item_Note" class="item">Note</span>
+      </div>
+      <!--clock-->
+      <a id="navBarClock" class="link-button">
+        <span class="material-icons-round">
+          schedule
+        </span>
+        Your time here
+      </a>
+      <!--date-->
+      <a id="navBarDate" class="link-button" style="margin-right: 0.5em;">
+        <span class="material-icons-round" style="color: #9ece6a; ">
+          calendar_month
+        </span>
+        <p>Your time here</p>
+      </a>
+      <!--setting-->
+      <a id="navBarSetting" class="link-button" style="margin-right: 0.5em;">
+        <span class="material-icons-round" style="color: #f7768e; ">
+          settings
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <div class="terminal-window" id="Terminal" style="width: 700px; height: 400px;">
+    <header class="titlebar">
+      <div class="window_button green"></div>
+      <!--div class="window_button yellow"></div-->
+      <!--div class="window_button red"></div-->
+      <div class="window_button title">Terminal:~</div>
+    </header>
+    <section class="terminal">
+      <div class="currentLine"><span style="color: #b2e5dd">Faewulf</span>@<span
+          style="color: lightgreen">openGiaLam</span> <span style="color: dodgerblue">~</span>$<span
+          style="color: #ff7a93">></span> <span class="typed-cursor">_</span></div>
+    </section>
+  </div>
+
+
+
+  <!-- Visualizer -->
+  <div class="terminal-window minimize" id="Visualizer" style="top: 10%; left: 50%; width: 445px; height: 475px;">
+    <header class="titlebar">
+      <div class="window_button green"></div>
+      <div class="window_button title">Visualizer</div>
+    </header>
+    <section class="terminal" style="overflow: hidden;">
+      <img class="coverImg" src="assets/visualizer.png"></img>
+      <button id="premusic" class="vbutton">
+        <span class="material-icons-round md-24" style="color: #ff7a93; font-size: 30px;">
+          open_in_new
+        </span>
+      </button>
+      <canvas id="visualizer"></canvas>
+      <audio id="audio" controls></audio>
+      <button id="getFile" onclick="document.getElementById('audioInput').click();">
+        <span class="material-icons-round md-24" style="color: #ff7a93; font-size: 30px;">
+          file_open
+        </span>
+      </button>
+      <input type="file" id="audioInput" accept="audio/*" />
+    </section>
+  </div>
+
+  <!--setting-->
+  <div class="terminal-window minimize" id="Setting" style="width: 375px; height: 300px; top: 7%; left: 70%;">
+    <header class="titlebar">
+      <div class="window_button green"></div>
+      <div class="window_button title">Settings</div>
+    </header>
+    <section class="terminal"">
+      <div class=" settings">
+      <div class="setting">
+        <input type="checkbox" id="setting_anibackground" checked />
+        <label for="setting_anibackground">Spawn animate in background</label>
+      </div>
+      <div class="setting">
+        <input type="checkbox" id="setting_blurbackground"/>
+        <label for="setting_blurbackground">Blur background</label>
+      </div>
+  </div>
+  </section>
+  </div>
+
+  <!--matrix-->
+  <div class="terminal-window minimize" id="Matrix" style="width: 545px; height: 475px; top: 30%; left: 45%;">
+    <header class="titlebar">
+      <div class="window_button green"></div>
+      <div class="window_button title">Matrix</div>
+    </header>
+    <section class="terminal" style="overflow: hidden;">
+      <canvas id="matrixCLI" style="width: 100%; height: 100%;"></canvas>
+    </section>
+  </div>
+
+  <!--texteditor-->
+  <div class="terminal-window minimize" id="Note" style="width: 545px; height: 475px; top: 10%; left: 35%;">
+    <header class="titlebar">
+      <div class="window_button green"></div>
+      <div class="window_button title">Note</div>
+    </header>
+    <section class="terminal">
+      <div id="myEditor" contenteditable="true" style="width: 100%; height: 100%; outline: none; white-space:pre-wrap;">
+        &nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;(&nbsp;/(&nbsp;&nbsp;&nbsp;)\&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;/(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;)\())&nbsp;(()/(&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;)\())&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        ((_)\&nbsp;&nbsp;&nbsp;/(_)))\&nbsp;&nbsp;((_)\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;((_)&nbsp;(_))&nbsp;((_)&nbsp;&nbsp;_((_)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;/&nbsp;_&nbsp;\&nbsp;|&nbsp;_&nbsp;\|&nbsp;__||&nbsp;\|&nbsp;|(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)\&nbsp;)&nbsp;&nbsp;
+        |&nbsp;(_)&nbsp;||&nbsp;&nbsp;_/|&nbsp;_|&nbsp;|&nbsp;.`&nbsp;|)\&nbsp;)&nbsp;&nbsp;&nbsp;(()/(&nbsp;&nbsp;
+        &nbsp;\___/&nbsp;|_|&nbsp;&nbsp;|___||_|\_(()/(&nbsp;&nbsp;&nbsp;&nbsp;/(_))&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/(_))_&nbsp;(_))&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_))&nbsp;__||&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;(_&nbsp;||&nbsp;|__&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\___||____|&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        GL stands for GiaLam, not "Graphics Library"
+
+        Why Open? I love open source lol."</div>
+    </section>
+  </div>
+
+  <!--div class="GLbutton">OpenGL</div-->
+  <script src="scripts/background.js"></script>
+  <script src="scripts/index.js"></script>
+  <script src="scripts/terminal.js"></script>
+  <script src="scripts/windowManager.js"></script>
+  <script src="scripts/visualizer.js"></script>
+  <script src="scripts/matrix.js"></script>
+  <script src="scripts/note.js"></script>
+  <script src="scripts/setting.js"></script>
+</body>
+
+</html>
