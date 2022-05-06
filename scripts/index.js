@@ -5,6 +5,7 @@ setInterval(() => {
         </span>
          <p>${new Date().toLocaleTimeString()}</p>
         `
+      /*
     const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     const d = new Date();
@@ -16,6 +17,7 @@ setInterval(() => {
         </span>
          <p>${day}, ${new Date().getDate()}</p>
         `
+        */
 }, 1000)
 
 console.log(window.innerWidth)
