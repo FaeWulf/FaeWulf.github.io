@@ -64,9 +64,8 @@
 
 .terminal-window header .window_button.title {
     color: antiquewhite;
-    margin-left: 35%;
+    margin-left: 30rem;
     margin-top: 0rem;
-    align-content: center;
 }
 
 .terminal-window section.terminal {
