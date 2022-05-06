@@ -16,7 +16,7 @@ cmds = [
 <div>__/\\\\\\_____________\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div>&nbsp;_\\/\\\\\\____/\\\\\\\\\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">OS:</span> HTML, JavaScript, CSS </div>
 <div>&nbsp;&nbsp;_\\/\\\\\\___\\/////\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Host:</span> Your Browser </div>
-<div>&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Terminal:</span> Ferminal </div>
+<div>&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Terminal:</span> Ferminal 1.09a </div>
 <div>&nbsp;&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;<span class="_green b1">Email:</span> ngolamaz3@gmail.com </div>
 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_\\//\\\\\\\\\\\\\\\\\\\\\\\\/__\\/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_&nbsp;&nbsp;<span class="_green b1">Discord:</span> <a class="tlink" href=\"https://discord.com\" target='_blank'>FaeWulf#6969</a> </div>
 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__\\////////////____\\///////////////__&nbsp;<span class="_green b1">Github:</span><a class="tlink" href=\"https://github.com/FaeWulf\" target='_blank'> FaeWulf</a></div>

@@ -71,7 +71,7 @@
 .terminal-window section.terminal {
     color: white;
     font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
-    font-size: 1vw; /*14px*/
+    font-size: 19px; /*14px*/
     border-radius: 0px 0px 8px 8px;
     background: #30353A99;
     -webkit-backdrop-filter: blur(10px);

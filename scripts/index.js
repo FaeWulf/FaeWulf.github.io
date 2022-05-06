@@ -38,12 +38,17 @@ Array.from(applications).forEach(E =>  {
 })
 
 var windows = document.getElementsByClassName("terminal")
+var windowsTerminal = document.getElementsByClassName("terminal-window")
 Array.from(windows).forEach(element => {
-  console.log(element.textContent)
   if(window.innerWidth <= 800) {
       element.style.fontSize = "9px"
-      element.style.left = "3px"
-      element.style.width = "90%"
+  }
+});
+
+Array.from(windowsTerminal).forEach(e => {
+  if(window.innerWidth <= 800) {
+      e.style.left = "3px"
+      e.style.width = "90%"
   }
 });
 
