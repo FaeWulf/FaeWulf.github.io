@@ -13,8 +13,8 @@ function isPhone() {
 };
 
 if(isPhone()) {
-    document.querySelector(".bg").classList.remove("blur")
-    enabled = false
+    document.querySelector("#setting_perform").classList.remove("checked")
+    liteMode = true
 }
 
 setting.addEventListener('click', () => {
