@@ -68,7 +68,7 @@
   </header>
 
   <!-- Terminal -->
-  <div class="terminal-window" id="Terminal" style="width: 70%; height: 70%; top: 8%; left: 16%;">
+  <div class="terminal-window" id="Terminal" style="top: 8%; left: 16%; z-index: 10;">
     <header class="titlebar">
       <div class="window_button green"></div>
       <!--div class="window_button yellow"></div-->
@@ -85,7 +85,7 @@
 
 
   <!-- Visualizer -->
-  <div class="terminal-window minimize" id="Visualizer" style="top: 10%; left: 50%; width: 20%; height: 40%;">
+  <div class="terminal-window minimize" id="Visualizer" style="top: 10%; left: 50%;">
     <header class="titlebar">
       <div class="window_button green"></div>
       <div class="window_button title">Visualizer</div>
@@ -109,7 +109,7 @@
   </div>
 
   <!--setting-->
-  <div class="terminal-window minimize" id="Setting" style="width: 20%; height: 20%; top: 4%; left: 0.5%; ">
+  <div class="terminal-window" id="Setting" style="top: 4%; left: 0.5%; ">
     <header class="titlebar">
       <div class="window_button green"></div>
       <div class="window_button title">Settings</div>
@@ -118,7 +118,15 @@
       <div class=" settings">
       <div class="setting">
         <input type="checkbox" id="setting_anibackground" checked />
-        <label for="setting_anibackground">Spawn animate in background</label>
+        <label for="setting_anibackground">Spawn lines in background</label>
+      </div>
+      <div class="setting">
+        <input type="checkbox" id="setting_stop"/>
+        <label for="setting_stop">Stop animate background</label>
+      </div>
+      <div class="setting">
+        <input type="checkbox" id="setting_perform"/>
+        <label for="setting_perform">High performance mode</label>
       </div>
       <div class="setting">
         <input type="checkbox" id="setting_blurbackground"/>
@@ -129,7 +137,7 @@
   </div>
 
   <!--matrix-->
-  <div class="terminal-window minimize" id="Matrix" style="width:30%; height: 30%; top: 30%; left: 45%;">
+  <div class="terminal-window minimize" id="Matrix" style="top: 30%; left: 45%;">
     <header class="titlebar">
       <div class="window_button green"></div>
       <div class="window_button title">Matrix</div>
@@ -140,7 +148,7 @@
   </div>
 
   <!--texteditor-->
-  <div class="terminal-window minimize" id="Note" style="width: 30%; height: 35%; top: 10%; left: 35%;">
+  <div class="terminal-window minimize" id="Note" style="top: 10%; left: 40%;">
     <header class="titlebar">
       <div class="window_button green"></div>
       <div class="window_button title">Note</div>

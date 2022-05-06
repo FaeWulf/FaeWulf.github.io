@@ -59,6 +59,10 @@
         0 0 30px rgba(253, 107, 184, .7);
 }
 
+.bg span.noBlur {
+    box-shadow: none;
+}
+
 @keyframes move {
     from {
         top: -60%;

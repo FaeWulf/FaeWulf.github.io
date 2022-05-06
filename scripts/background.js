@@ -3,6 +3,8 @@ const stage = document.querySelector(".bg .rotate");
 
 const setting = document.querySelector("#Setting")
 let enabled = true
+let stopped = false
+let liteMode = false
 
 function isPhone() {
   let check = false;
@@ -16,10 +18,42 @@ if(isPhone()) {
 }
 
 setting.addEventListener('click', () => {
+    let stop = document.getElementById("setting_stop")
     let animated = document.getElementById("setting_anibackground")
     let blur = document.getElementById("setting_blurbackground")
+    let perform = document.getElementById("setting_perform")
+
+    liteMode = perform.checked
 
     enabled = animated.checked
+    stopped = stop.checked
+
+    if(!enabled) {
+        stage.innerHTML = ""
+    }
+    
+    if(perform.checked) {
+        Array.from(stage.children).forEach( c => {
+            c.classList.add("noBlur")
+        })
+    }
+    else {
+        Array.from(stage.children).forEach( c => {
+            c.classList.remove("noBlur")
+        })
+   }
+
+    if(stop.checked) {
+        Array.from(stage.children).forEach( c => {
+            c.style.animationPlayState = 'paused';
+        })
+    }
+    else {
+        Array.from(stage.children).forEach( c => {
+            c.style.animationPlayState = 'running';
+        })
+   }
+
 
     if(blur.checked)
         document.querySelector(".bg").classList.add("blur")
@@ -32,7 +66,11 @@ function randInt(min, max) {
 }
 
 setInterval(() => {
-    if(stage.childNodes.length <= size && enabled)
+
+    if(!enabled || stopped)
+        return
+
+    if(stage.childNodes.length <= size)
 	    makeNeon();
 
     if(randInt(0,5) == 2) {
@@ -48,6 +86,10 @@ setInterval(() => {
 
 function makeNeon() {
 	let span = document.createElement("span");
+
+    if(liteMode)
+	    span.classList.add('noBlur');
+
 	span.classList.add("s" + randInt(1,4));
     span.style.height = `${randInt(25,550)}px`
     span.style.width = `${randInt(1,12)}px`
@@ -56,7 +98,6 @@ function makeNeon() {
     span.style.opacity = "0"
 
     span.style.animation = `move ${randInt(7,20)}s linear infinite`
-
 
     setTimeout(() => {
         span.style.opacity = "1.0"
