@@ -36,6 +36,6 @@ var windows = document.getElementsByClassName("terminal")
 Array.from(windows).forEach(element => {
   console.log(element.textContent)
   if(window.innerWidth <= 800) {
-      element.style.fontSize = "13px"
+      element.style.fontSize = "10px"
   }
 });
