@@ -20,8 +20,6 @@ setInterval(() => {
         */
 }, 1000)
 
-console.log(window.innerWidth)
-
 //navbar
 
 var applications = document.getElementsByClassName("item")
@@ -33,3 +31,11 @@ Array.from(applications).forEach(E =>  {
     E.classList.toggle("glow")
   })
 })
+
+var windows = document.getElementsByClassName("terminal")
+Array.from(windows).forEach(element => {
+  console.log(element.textContent)
+  if(window.innerWidth <= 800) {
+      element.style.fontSize = "13px"
+  }
+});
