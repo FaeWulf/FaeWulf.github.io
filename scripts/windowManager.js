@@ -1,5 +1,5 @@
 Array.from(document.getElementsByClassName("terminal-window")).forEach(e => {
-    e.addEventListener('mousedown', () => {
+    e.addEventListener('pointerdown', () => {
         Array.from(document.getElementsByClassName("terminal-window")).forEach(te => {
             te.classList.remove("activated")
             te.style.zIndex = "1"
@@ -17,8 +17,8 @@ function dragElement(elmnt) {
     var titlebar = elmnt.firstElementChild;
     var terminal = elmnt.lastElementChild;
     if (titlebar) {
-        titlebar.onmousedown = dragMouseDown;
-        terminal.onmousedown = dragMouseDownResize;
+        titlebar.onpointerdown = dragMouseDown;
+        terminal.onpointerdown = dragMouseDownResize;
     }
 
 
@@ -30,12 +30,12 @@ function dragElement(elmnt) {
         // get the mouse cursor position at startup:
         pos3 = e.clientX;
         pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
+        document.onpointerup = closeDragElement;
         // call a function whenever the cursor moves:
 
         //both axis
         if ((pos3 > rect.x + rect.width - resizeSize && pos3 < rect.x + rect.width + resizeSize) && (pos4 > rect.y + rect.height - resizeSize && pos4 < rect.y + rect.height + resizeSize)) {
-            document.onmousemove = (e) => {
+            document.onpointermove = (e) => {
                 e = e || window.event;
                 e.preventDefault();
 
@@ -53,8 +53,6 @@ function dragElement(elmnt) {
                 var sizeX = (rect.width - pos1)
                 var sizeY = (rect.height - pos2)
 
-                console.log(`element ${sizeX} ${sizeY}`)
-
                 if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
                     elmnt.style.width = sizeX + "px"
                     elmnt.style.height = sizeY + "px"
@@ -65,7 +63,7 @@ function dragElement(elmnt) {
 
             //x axis
             if (pos3 > rect.x + rect.width - resizeSize && pos3 < rect.x + rect.width + resizeSize)
-                document.onmousemove = (e) => {
+                document.onpointermove = (e) => {
                     e = e || window.event;
                     e.preventDefault();
 
@@ -91,7 +89,7 @@ function dragElement(elmnt) {
             else
                 //y axis
                 if (pos4 > rect.y + rect.height - resizeSize && pos4 < rect.y + rect.height + resizeSize)
-                    document.onmousemove = (e) => {
+                    document.onpointermove = (e) => {
                         e = e || window.event;
                         e.preventDefault();
 
@@ -109,8 +107,6 @@ function dragElement(elmnt) {
                         var sizeX = (rect.width - pos1)
                         var sizeY = (rect.height - pos2)
 
-                        console.log(`element ${sizeX} ${sizeY}`)
-
                         if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
                             //elmnt.style.width = sizeX + "px"
                             elmnt.style.height = sizeY + "px"
@@ -125,9 +121,9 @@ function dragElement(elmnt) {
         // get the mouse cursor position at startup:
         pos3 = e.clientX;
         pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
+        document.onpointerup = closeDragElement;
         // call a function whenever the cursor moves:
-        document.onmousemove = elementDrag;
+        document.onpointermove = elementDrag;
     }
 
     function elementDrag(e) {
@@ -156,7 +152,7 @@ function dragElement(elmnt) {
 
     function closeDragElement() {
         // stop moving when mouse button is released:
-        document.onmouseup = null;
-        document.onmousemove = null;
+        document.onpointerup = null;
+        document.onpointermove = null;
     }
 }

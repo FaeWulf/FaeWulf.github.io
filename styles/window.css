@@ -73,6 +73,7 @@
     color: white;
     font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
     font-size: 1.432958vh; /*14px*/
+    border-radius: 0px 0px 8px 8px;
     background: #30353A99;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);

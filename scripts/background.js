@@ -10,8 +10,10 @@ function isPhone() {
   return check;
 };
 
-if(isPhone())
+if(isPhone()) {
+    document.querySelector(".bg").classList.remove("blur")
     enabled = false
+}
 
 setting.addEventListener('click', () => {
     let animated = document.getElementById("setting_anibackground")

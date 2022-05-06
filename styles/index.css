@@ -1,6 +1,8 @@
 body {
     margin: 0;
     background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
+    /* visual checking stuff*/
+    /*background: radial-gradient(ellipse at top, #7e7e7e 0%, #ffffff 100%);*/
     animation: gradient 15s ease infinite;
     height: 100vh;
     background-size: 100% 100%;
@@ -110,11 +112,17 @@ a.link-button {
     background-color: rgba(2, 19, 26);
     display: inline-flex;
     font-size: 1.74vh;
-    margin-top: 0.2rem;
     text-align: center;
     border: none;
     font-weight: bold;
-    margin-top: 0.5rem;
+    position: absolute;
+    right: 3rem;
+    top: 13%;
+    z-index: 1;
+}
+
+#navBarDate:hover {
+    transform: translateX(-5rem);
 }
 
 #navBarClock {
@@ -130,13 +138,14 @@ a.link-button {
     -ms-user-select: none;
     /* Internet Explorer/Edge */
     user-select: none;
-
+    position: absolute;
     font-family: 'Merriweather Sans', sans-serif;
-    display: inline-flex;
     font-size: 1.74vh;
     text-align: center;
     font-weight: bold;
-    margin-top: 0.5rem;
+    right: 0px;
+    top: 10%;
+    z-index: 2;
 }
 
 #navBarSetting {
@@ -151,14 +160,16 @@ a.link-button {
     -ms-user-select: none;
     /* Internet Explorer/Edge */
     user-select: none;
+    position: absolute;
     background-color: rgba(2, 19, 26, 00);
     border: none;
     font-family: 'Merriweather Sans', sans-serif;
     display: inline-flex;
-    font-size: 17px;
+    font-size: 1.74vh;
     text-align: center;
     font-weight: bold;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
+    left: 0.5rem;
     transition: all 0.4s linear;
 }
 
