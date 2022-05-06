@@ -11,15 +11,15 @@ cmds = [
         "output": `
 <div>&nbsp;</div>
 <div>&nbsp;</div>
-<div>_____/\\\\\\\\\\\\\\\\\\\\\\\\__/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_cyan">Faewulf</span>@<span class="_green">OpenGiaLam</span></div>
-<div>&nbsp;___/\\\\\\//////////__\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-------------</div>
-<div>&nbsp;&nbsp;__/\\\\\\_____________\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_gold">"Sofa, Run, away Crocodile,..."</span></div>
-<div>&nbsp;&nbsp;&nbsp;_\\/\\\\\\____/\\\\\\\\\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">OS:</span> HTML, JavaScript, CSS </div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;_\\/\\\\\\___\\/////\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Host:</span> Your Browser </div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Terminal:</span> Ferminal </div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Email:</span> ngolamaz3@gmail.com </div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_\\//\\\\\\\\\\\\\\\\\\\\\\\\/__\\/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Discord:</span> <a class="tlink" href=\"https://discord.com\" target='_blank'>FaeWulf#6969</a> </div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__\\////////////____\\///////////////__&nbsp;&nbsp;&nbsp;<span class="_green b1">Github:</span><a class="tlink" href=\"https://github.com/FaeWulf\" target='_blank'> FaeWulf</a></div>
+<div>___/\\\\\\\\\\\\\\\\\\\\\\\\__/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_cyan">Faewulf</span>@<span class="_green">OpenGiaLam</span></div>
+<div>__/\\\\\\//////////__\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-------------</div>
+<div>__/\\\\\\_____________\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div>&nbsp;_\\/\\\\\\____/\\\\\\\\\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">OS:</span> HTML, JavaScript, CSS </div>
+<div>&nbsp;&nbsp;_\\/\\\\\\___\\/////\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Host:</span> Your Browser </div>
+<div>&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Terminal:</span> Ferminal </div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;<span class="_green b1">Email:</span> ngolamaz3@gmail.com </div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_\\//\\\\\\\\\\\\\\\\\\\\\\\\/__\\/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_&nbsp;&nbsp;<span class="_green b1">Discord:</span> <a class="tlink" href=\"https://discord.com\" target='_blank'>FaeWulf#6969</a> </div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__\\////////////____\\///////////////__&nbsp;<span class="_green b1">Github:</span><a class="tlink" href=\"https://github.com/FaeWulf\" target='_blank'> FaeWulf</a></div>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
 <div>type "help" for "help"?!</div>
