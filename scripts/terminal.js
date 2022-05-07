@@ -16,7 +16,7 @@ cmds = [
 <div>__/\\\\\\_____________\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div>&nbsp;_\\/\\\\\\____/\\\\\\\\\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">OS:</span> HTML, JavaScript, CSS </div>
 <div>&nbsp;&nbsp;_\\/\\\\\\___\\/////\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Host:</span> Your Browser </div>
-<div>&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Terminal:</span> Ferminal v1.10b </div>
+<div>&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;&nbsp;<span class="_green b1">Terminal:</span> Ferminal v1.10c </div>
 <div>&nbsp;&nbsp;&nbsp;&nbsp;_\\/\\\\\\_______\\/\\\\\\_\\/\\\\\\_____________&nbsp;&nbsp;&nbsp;<span class="_green b1">Email:</span> ngolamaz3@gmail.com </div>
 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_\\//\\\\\\\\\\\\\\\\\\\\\\\\/__\\/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_&nbsp;&nbsp;<span class="_green b1">Discord:</span> <a class="tlink" href=\"https://discord.com\" target='_blank'>FaeWulf#6969</a> </div>
 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__\\////////////____\\///////////////__&nbsp;<span class="_green b1">Github:</span><a class="tlink" href=\"https://github.com/FaeWulf\" target='_blank'> FaeWulf</a></div>
@@ -29,7 +29,7 @@ cmds = [
         "name": "help",
         "output": `
         <div>&nbsp;</div>
-        Available commands: neofetch, help, social, git, lmao.
+        Available commands: neofetch, help, social, git, reboot, lmao.
         <div>&nbsp;</div>
         `
     },
@@ -86,7 +86,7 @@ document.addEventListener("keydown", function (e) {
         switch (key) {
             case "Enter":
                 if (input.length !== 0) {
-                    const args = input.trim().split(' ');
+                    const args = input.toLowerCase().trim().split(' ');
                     let cmd = null;
                     if (args.length > 1) {
                         cmd = args.join(' ')?.toString();
@@ -95,6 +95,12 @@ document.addEventListener("keydown", function (e) {
                     }
 
                     succeed = false
+
+                    if(cmd == "reboot") {
+                        location.reload();
+                        succeed = true;
+                    }
+
                     cmds.forEach(e => {
                         if (e.name == cmd) {
                             printLine(e.output)

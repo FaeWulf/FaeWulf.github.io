@@ -9,21 +9,23 @@ Array.from(document.getElementsByClassName("terminal-window")).forEach(e => {
     })
 
     dragElement(e)
+    console.log(e.children)
 })
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    var resizeSize = 10;
     var titlebar = elmnt.firstElementChild;
-    var terminal = elmnt.lastElementChild;
+    var resizeBarH = elmnt.children[1]
+    var resizeBarW = elmnt.children[2]
+    var resizeBarWH = elmnt.children[3]
     if (titlebar) {
         titlebar.onpointerdown = dragMouseDown;
-        terminal.onpointerdown = dragMouseDownResize;
+        resizeBarH.onpointerdown =  dragMouseDownResizeH; 
+        resizeBarW.onpointerdown = dragMouseDownResizeW;
+        resizeBarWH.onpointerdown = dragMouseDownResizeWH;
     }
 
-
-    function dragMouseDownResize(e) {
-        var rect = elmnt.getBoundingClientRect();
+    function dragMouseDownResizeWH(e) {
         e = e || window.event;
         //disable becasue need to highlight texts
         // e.preventDefault();
@@ -32,87 +34,88 @@ function dragElement(elmnt) {
         pos4 = e.clientY;
         document.onpointerup = closeDragElement;
         // call a function whenever the cursor moves:
+        document.onpointermove = (e) => {
+            e = e || window.event;
+            e.preventDefault();
 
-        //both axis
-        if ((pos3 > rect.x + rect.width - resizeSize && pos3 < rect.x + rect.width + resizeSize) && (pos4 > rect.y + rect.height - resizeSize && pos4 < rect.y + rect.height + resizeSize)) {
-            document.onpointermove = (e) => {
-                e = e || window.event;
-                e.preventDefault();
+            var rect = elmnt.getBoundingClientRect();
 
-                var rect = elmnt.getBoundingClientRect();
-                //console.log(`element ${rect.x} ${rect.y} | windows ${window.innerHeight} ${window.innerWidth}`)
-                //console.log(rect)
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
 
-                // calculate the new cursor position:
-                pos1 = pos3 - e.clientX;
-                pos2 = pos4 - e.clientY;
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                // set the element's new position:
+            var sizeX = (rect.width - pos1)
+            var sizeY = (rect.height - pos2)
 
-                var sizeX = (rect.width - pos1)
-                var sizeY = (rect.height - pos2)
+            if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
+                elmnt.style.width = sizeX + "px"
+                elmnt.style.height = sizeY + "px"
+            }
+        };
+    }
 
-                if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
-                    elmnt.style.width = sizeX + "px"
-                    elmnt.style.height = sizeY + "px"
-                }
-            };
-        }
-        else
+    function dragMouseDownResizeH(e) {
+        e = e || window.event;
+        //disable becasue need to highlight texts
+        // e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onpointerup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onpointermove = (e) => {
+            e = e || window.event;
+            e.preventDefault();
 
-            //x axis
-            if (pos3 > rect.x + rect.width - resizeSize && pos3 < rect.x + rect.width + resizeSize)
-                document.onpointermove = (e) => {
-                    e = e || window.event;
-                    e.preventDefault();
+            var rect = elmnt.getBoundingClientRect();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
 
-                    var rect = elmnt.getBoundingClientRect();
-                    //console.log(`element ${rect.x} ${rect.y} | windows ${window.innerHeight} ${window.innerWidth}`)
-                    //console.log(rect)
+            var sizeX = (rect.width - pos1)
+            var sizeY = (rect.height - pos2)
 
-                    // calculate the new cursor position:
-                    pos1 = pos3 - e.clientX;
-                    pos2 = pos4 - e.clientY;
-                    pos3 = e.clientX;
-                    pos4 = e.clientY;
-                    // set the element's new position:
+            if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
+                elmnt.style.height = sizeY + "px"
+            }
+        };
+    }
 
-                    var sizeX = (rect.width - pos1)
-                    var sizeY = (rect.height - pos2)
+    function dragMouseDownResizeW(e) {
+        e = e || window.event;
+        //disable becasue need to highlight texts
+        // e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onpointerup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onpointermove = (e) => {
+            e = e || window.event;
+            e.preventDefault();
 
-                    if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
-                        elmnt.style.width = sizeX + "px"
-                        //elmnt.style.height = sizeY + "px"
-                    }
-                };
-            else
-                //y axis
-                if (pos4 > rect.y + rect.height - resizeSize && pos4 < rect.y + rect.height + resizeSize)
-                    document.onpointermove = (e) => {
-                        e = e || window.event;
-                        e.preventDefault();
+            var rect = elmnt.getBoundingClientRect();
 
-                        var rect = elmnt.getBoundingClientRect();
-                        //console.log(`element ${rect.x} ${rect.y} | windows ${window.innerHeight} ${window.innerWidth}`)
-                        //console.log(rect)
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
 
-                        // calculate the new cursor position:
-                        pos1 = pos3 - e.clientX;
-                        pos2 = pos4 - e.clientY;
-                        pos3 = e.clientX;
-                        pos4 = e.clientY;
-                        // set the element's new position:
+            var sizeX = (rect.width - pos1)
+            var sizeY = (rect.height - pos2)
 
-                        var sizeX = (rect.width - pos1)
-                        var sizeY = (rect.height - pos2)
-
-                        if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
-                            //elmnt.style.width = sizeX + "px"
-                            elmnt.style.height = sizeY + "px"
-                        }
-                    };
-
+            if ((sizeY + rect.y < window.innerHeight) && (sizeX + rect.x < window.innerWidth)) {
+                elmnt.style.width = sizeX + "px"
+            }
+        };
     }
 
     function dragMouseDown(e) {
