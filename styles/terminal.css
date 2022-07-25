@@ -1,0 +1,86 @@
+span._gold {
+    color: rgb(229, 200, 144);
+    font-family: 'Fira Code', monospace;
+}
+
+span.b1 {
+    font-weight: bold;
+}
+
+div.quickcmd {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    font-size: smaller; 
+    opacity: 0.5;
+}
+
+span.clickbox {
+    cursor: pointer;
+}
+
+div #Terminal {
+    z-index: 20;
+    white-space: nowrap;
+    margin: 10px;
+    height: 95%;
+    max-height: 100%;
+    overflow: auto;
+    width: 50%;
+}
+
+.terminal {
+    margin: 10px;
+}
+
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+

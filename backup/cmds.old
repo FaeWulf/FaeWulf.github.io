@@ -1,0 +1,28 @@
+{
+        "name": "contact1",
+        "description": "My ultimate contact",
+        "output": `
+<div>&nbsp;</div>
+<div>&nbsp;Behold: </div>
+<pre>                 ${website}</pre>
+<pre>                   ▲</pre>
+<pre>                   │</pre>
+<pre>              ┌────┴────┐</pre>
+<pre>              │         │</pre>
+<pre>      contact@faewulf.xyz</pre>
+<pre>      │          │      │</pre>
+<pre>      └───┬──────┼──────┘</pre>
+<pre>          │      │</pre>
+<pre>          ▼      │ ┌─────────┐</pre>
+<pre>        ${email}    └►│${github}   │</pre>
+<pre>                   │${discord}  │</pre>
+<pre>                   │${steam}    │</pre>
+<pre>                   │${minecraft}│</pre>
+<pre>                   │${youtube}  │</pre>
+<pre>                   └─────────┘</pre>
+<div>&nbsp;</div>
+<pre>Extra</pre>
+<pre>&nbsp;&nbsp;&nbsp;<span class="theme_text_Green b1">Facebook:</span> <a class="tlink" href=\"https://www.facebook.com/ForestOfCorn/\" target='_blank'>ForestOfCorn</a></pre>
+<pre>&nbsp;</pre>
+        `
+    },

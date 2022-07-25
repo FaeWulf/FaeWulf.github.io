@@ -1,0 +1,34 @@
+:root {
+    --Rosewater : 220, 138, 120;
+	--Flamingo : 221, 120, 120;
+	--Pink : 234, 118, 203;
+	--Mauve	: 136, 57, 239;
+	--Red : 210, 15, 57;
+	--Maroon : 230, 69, 83;
+	--Peach : 254, 100, 11;
+	--Yellow : 223, 142, 29;
+	--Green : 64, 160, 43;
+	--Teal : 23, 146, 153;
+	--Sky	: 4, 165, 229;
+	--Sapphire	: 32, 159, 181;
+	--Blue		: 30, 102, 245;
+	--Lavender	: 114, 135, 253;
+	--Text	 : 76, 79, 105;
+	--Subtext1	: 92, 95, 119;
+	--Subtext0	: 108, 111, 133;
+	--Overlay2	: 124, 127, 147;
+	--Overlay1	: 140, 143, 161;
+	--Overlay0	: 156, 160, 176;
+	--Surface2	: 172, 176, 190;
+	--Surface1	: 188, 192, 204;
+	--Surface0	: 204, 208, 218;
+	--Base	: 239, 241, 245;
+	--Mantle: 230, 233, 239;
+	--Crust	: 220, 224, 232;
+}
+
+.tiling_window {
+    border-color: rgb(var(--Lavender));
+    background-color: rgba(var(--Crust), 1); /*crust*/
+    border-style: solid;
+}

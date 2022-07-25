@@ -1,0 +1,9 @@
+div#Note {
+    position: absolute;
+    margin: 10px;
+    height: 375px;
+    width: 375px;
+    overflow: auto;
+    z-index: 1;
+    top: 185px;
+}

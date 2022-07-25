@@ -1,0 +1,74 @@
+.tiling_window#IDE {
+    position: absolute;
+    z-index: 20;
+    white-space: nowrap;
+    margin: 10px;
+    height: 50%;
+    max-height: 50%;
+    overflow: auto;
+    width: calc(50% - 40px);
+
+    top: 0px;
+    right: 0px;
+}
+
+.tiling_window#IDE>div#codeIDE {
+    overflow: auto;
+    font-family: 'Fira Code', monospace;
+    counter-reset: step;
+    padding: 10px 32px 10px 48px;
+    width: calc(100% - 80px);
+    height: calc(100% - 20px);
+}
+
+.tiling_window#IDE>div#codeIDE::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tiling_window#IDE>div#codeIDE::-webkit-scrollbar-track {
+    background-color: rgba(var(--Base), 0.8);
+}
+
+.tiling_window#IDE>div#codeIDE::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--Peach), 1);
+}
+
+.tiling_window#IDE>div#codeIDE p {
+  display: block;
+  position: relative;
+  line-height: 16px;
+  white-space: pre-wrap;
+}
+.tiling_window#IDE>div#codeIDE p::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  right: calc(100% + 16px);
+  color: rgb(var(--Text));
+}
+
+.tiling_window#IDE>div#codeIDE .syntax {
+  color: rgb(var(--Red));
+}
+.tiling_window#IDE>div#codeIDE .syntax2 {
+  color: rgb(var(--Blue));
+  font-style: italic;
+}
+.tiling_window#IDE>div#codeIDE .number {
+  color: rgb(var(--Peach));
+}
+.tiling_window#IDE>div#codeIDE .function {
+  color: rgb(var(--Blue));
+}
+.tiling_window#IDE>div#codeIDE .string,
+.tiling_window#IDE>div#codeIDE .string * {
+  color: rgb(var(--Green));
+}
+.tiling_window#IDE>div#codeIDE .function_args,
+.tiling_window#IDE>div#codeIDE .function_args * {
+  color: rgb(var(--Teal));
+}
+.tiling_window#IDE>div#codeIDE .comment,
+.tiling_window#IDE>div#codeIDE .comment * {
+  color: rgb(var(--Overlay0));
+}

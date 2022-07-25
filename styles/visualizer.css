@@ -1,0 +1,46 @@
+input#audioInput {
+    display: none;
+}
+
+audio#audio {
+    position: absolute;
+    height: 30px;
+    width: 90%;
+    bottom: 5px;
+}
+
+div#VisualizerMain {
+    position: absolute;
+    margin: 10px;
+    white-space: nowrap;
+    height: 175px;
+    width: 375px;
+    overflow: hidden;
+    z-index: 1;
+    top: 0px;
+}
+
+#visualizer {
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    left: 10px;
+    bottom: 50px;
+}
+
+button#getFile {
+    position: absolute;
+    border: none;
+    right: 4px;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+.vbutton {
+    position: absolute;
+    border: none;
+    left: 4px;
+    top: 7px;
+    cursor: pointer;
+    z-index: 1;
+}

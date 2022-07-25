@@ -1,0 +1,81 @@
+div#body-content>div#Projects {
+    z-index: 20;
+    white-space: nowrap;
+    margin: 10px;
+    height: 95%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+div#body-content>div#Projects>div.content_holder {
+    margin: 10px;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+    gap: 10px;
+    perspective: 1000px
+}
+
+div#body-content>div#Projects>div.content_holder>div {
+    position: relative;
+    height: 200px;
+    width: calc((100% - 60px) / 4);
+    min-width: 350px;
+    background-color: rgb(var(--Surface0));
+    border: 3px solid rgba(var(--Lavender), 0.5);
+    z-index: 0;
+    transition: transform 0.3s linear;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 10px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    div#body-content>div#Projects>div.content_holder>div:hover {
+        border: 3px solid rgb(var(--Red));
+        transform: scale(1.1);
+        box-shadow: 10px 30px 50px -6px black;
+        z-index: 1;
+    }
+}
+
+/* item elements */
+div#body-content>div#Projects>div.content_holder>div>div {
+    color: rgb(var(--Text));
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+}
+
+div#body-content>div#Projects>div.content_holder>div>a.source {
+    position: absolute;
+    right: -5px;
+    top: -2px;
+    font-size: 18px;
+    padding: 5px;
+    padding-right: 0px;
+    opacity: 0.7;
+    animation: link_jump 1s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes link_jump {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

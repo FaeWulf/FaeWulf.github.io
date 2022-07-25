@@ -1,0 +1,125 @@
+.theme_Crust { background-color:  rgb(24, 25, 38); }
+.theme_Base { background-color:  rgb(36, 39, 58); }
+.theme_Mantle { background-color: rgb(30, 32, 48); }
+
+.theme_Surface2 { background-color: rgb(91, 96, 120); }	
+.theme_Surface1	{ background-color: rgb(73, 77, 100); }
+.theme_Surface0 { background-color: rgb(54, 58, 79); }
+
+.theme_Overlay2	{ background-color: rgb(147, 154, 183) }	
+.theme_Overlay1	{ background-color: rgb(128, 135, 162) }	
+.theme_Overlay0	{ background-color: rgb(110, 115, 141) }	
+
+.theme_Rosewater { background-color: rgb(244, 219, 214) }
+.theme_Flamingo { background-color: rgb(240, 198, 198) }
+.theme_Pink { background-color: rgb(245, 189, 230) }
+.theme_Mauve { background-color: rgb(198, 160, 246) }
+.theme_Red { background-color: rgb(237, 135, 150) }
+.theme_Maroon { background-color: rgb(238, 153, 160) }
+.theme_Peach { background-color: rgb(245, 169, 127) }
+.theme_Yellow { background-color: rgb(238, 212, 159) }
+.theme_Green { background-color: rgb(166, 218, 149) }
+.theme_Teal { background-color: rgb(139, 213, 202) }
+.theme_Sky { background-color: rgb(145, 215, 227) }
+.theme_Sapphire { background-color: rgb(125, 196, 228) }
+.theme_Blue { background-color: rgb(138, 173, 244) }
+.theme_Lavender { background-color: rgb(183, 189, 248) }
+
+.theme_text_Rosewater { color: rgb(244, 219, 214) }
+.theme_text_Flamingo { color: rgb(240, 198, 198) }
+.theme_text_Pink { color: rgb(245, 189, 230) }
+.theme_text_Mauve { color: rgb(198, 160, 246) }
+.theme_text_Red { color: rgb(237, 135, 150) }
+.theme_text_Maroon { color: rgb(238, 153, 160) }
+.theme_text_Peach { color: rgb(245, 169, 127) }
+.theme_text_Yellow { color: rgb(238, 212, 159) }
+.theme_text_Green { color: rgb(166, 218, 149) }
+.theme_text_Teal { color: rgb(139, 213, 202) }
+.theme_text_Sky { color: rgb(145, 215, 227) }
+.theme_text_Sapphire { color: rgb(125, 196, 228) }
+.theme_text_Blue { color: rgb(138, 173, 244) }
+.theme_text_Lavender { color: rgb(183, 189, 248) }
+
+.theme_Text { color: rgb(202, 211, 245); }
+.theme_Subtext1 { color: rgb(184, 192, 224); }
+.theme_Subtext0 { color: rgb(165, 173, 203); }
+	
+
+.tiling_window {
+    border-color: var(--Lavender);
+    background-color:rgba(36, 39, 58, .6); /*crust*/
+    border-style: solid;
+}
+
+/* specific theme */
+body {
+    background: #1b2735;
+    color: var(--Text);
+}
+
+a.tlink {
+    color: rgb(244, 219, 214);
+}
+
+/* scroll bar */
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    opacity: 0.5;
+	width: 0px;
+    border-radius: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(30, 32, 48, 0.3);
+    box-shadow: inset 0 0 6px rgba(30, 32, 48, 0.3);;
+	background-color: #555;
+}
+
+/* text highlight */
+::-moz-selection {
+  color: rgb(198, 208, 245);
+  background: rgb(98, 104, 128);
+}
+::selection {
+  color: rgb(198, 208, 245);
+  background: rgb(98, 104, 128);
+}
+
+/* navbar */
+#navbarSupportedContent>ul>li.active>a { 
+    transition: all 0.7s;
+    background: linear-gradient(120deg, #4fe49c, #45abd6, #4fe49c);
+    background: linear-gradient(120deg, rgb(73, 77, 100), rgb(24, 25, 38), rgb(110, 115, 141));
+    background-size: 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: hueRotate 1s linear infinite;
+}
+
+.hori-selector .right:before,
+.hori-selector .left:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(24, 25, 38);
+}
+
+.navbar-mainbg {
+    background-color: rgba(24, 25, 38); /*crust*/
+    border-bottom: 3px solid rgb(245, 169, 127);
+    padding: 0px;
+}
