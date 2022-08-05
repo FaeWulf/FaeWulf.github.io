@@ -1,170 +1,97 @@
-// ---------Responsive-navbar-active-animation-----------
+console.log($(window).height() + " x " + $(window).width())
+console.log("mobile? " + isPhone())
+
 function update() {
-	var activeTab = $("li.nav-item.active");
+    $(".main_window, section.visual").css({
+        "width": "80%",
+        "height": "80%",
+        "min-width": "500px",
+        "max-width": "800px"
+    });
 
-	$(".hori-selector").css({
-		"top": activeTab.position().top + "px",
-		"left": activeTab.position().left + "px",
-		"height": activeTab.innerHeight() + "px",
-		"width": activeTab.innerWidth() + "px"
-	});
+    $(".main_window, section.visual").css({
+        "top": ($(window).height() / 2 - $(".main_window").height() / 2) + "px",
+        "left": ($(window).width() / 2 - $(".main_window").width() / 2) + "px",
+        "width": "80%",
+    });
 
-	console.log(activeTab.position())
+
+    if (_isPhone) {
+        $(".main_window, section.visual").css({
+            "width": "90%",
+            "height": "90%",
+            "min-width": "250px",
+            "max-width": "500px"
+        });
+
+        $(".main_window, section.visual").css({
+            "top": ($(window).height() / 2 - $(".main_window").height() / 2) + "px",
+            "left": ($(window).width() / 2 - $(".main_window").width() / 2) + "px",
+        });
+    }
 
 }
 
-function body_resize() {
-	$("#body-content").css({
-		"top": $('#navbar').position().top + $('#navbar').innerHeight() + "px",
-		"height": $(window).height() - $("#navbar").innerHeight() + "px"
-	})
+function projectPageInit() {
+    projects.forEach(E => {
+        let div = "<div>"
 
-	$("div#body-content>div#Terminal,div#body-content>div#Projects").css({
-		"height": $(window).height() - $("#navbar").innerHeight() - 20 + "px",
-		"maxheight": $(window).height() - $("#navbar").innerHeight() - 20 + "px"
-	})
+        if(E.name)
+            div += `<div class="b1">${E.name}</div>`
 
-	if(isPhone()) {
-		$(".tiling_window#Console").css({
-			"width": "calc(100% - 40px)",
-			"overflow": "auto"
-		})
-		$(".tiling_window#IDE").css({
-			"width": "calc(100% - 20px)"
-		})
-		
-	}
+        if(E.des)
+            div += `<div>${E.des}</div>`
+
+        if(E.link)
+            div += `<a class="tlink source" href="${E.link}" target="_blank">
+    <i class="fas fa-external-link-alt" ></i>
+</a>`
+       
+        if(E.pic)
+            div += `<img src="${E.pic}" "></img>`
+
+        div += "</div>"
+
+        $("div#project>div.holder").append(div)
+    })
 }
 
-function discord_alert(node) {
-	return confirm("My username is Faewulf#0901");
-}
+const _isPhone = isPhone()
 
 $(document).ready(function () {
-	setTimeout(function () { update(); }, 300);
-	setTimeout(function () { body_resize() });
+    //setTimeout(function () { body_resize() });
+    update()
 
-	//tab manager init
-	let id = $(".active").attr("id")
+    if (window.location.hash == "#projects") {
+        $("#project").show()
+        $("section.terminal, a.toProjectButton").hide()
+    }
 
-	$("#body-content").children().each(function (i, obj) {
-		if (tabs[id].includes($(this).attr("id")))
-			$(this).css({
-				"display": ""
-			})
-		else
-			$(this).css({
-				"display": "none"
-			})
-	})
+    if (window.location.hash == "") {
+        $("#project").hide()
+        $("section.terminal, a.toProjectButton").show()
+        console.log("ad")
+    }
 
-	//phone tweak
-	if (isPhone()) {
-		// full size terminal, disabling windows on purpose
-		$("#home-switcher").show()
-		$(".tiling_window#Terminal").css({
-			"width": "auto",
-		})
-
-		$(".tiling_window#IDE, .tiling_window#Console").hide()
-	}
+    projectPageInit()
 });
+
+window.onhashchange = () => {
+
+    console.log(window.location.hash)
+
+    if (window.location.hash == "#projects") {
+        $("#project").show()
+        $("section.terminal, a.toProjectButton").hide()
+    }
+
+    if (window.location.hash == "") {
+        $("#project").hide()
+        $("section.terminal, a.toProjectButton").show()
+    }
+}
 
 $(window).on('resize', function () {
-	setTimeout(function () { update(); }, 300);
-	setTimeout(function () { body_resize() });
+    update()
+    //setTimeout(function () { body_resize() });
 });
-
-$("#nav-hidder").click(function () {
-	$(".navbar-collapse").slideToggle(300);
-	setTimeout(function () { update(); });
-	setTimeout(function () { body_resize() }, 300);
-	$(".navbar-toggler").show(500)
-})
-
-$(".navbar-toggler").click(function () {
-	$(".navbar-collapse").slideToggle(300);
-	setTimeout(function () { update(); });
-	setTimeout(function () { body_resize() }, 300);
-	$(this).hide()
-});
-
-$("#home-switcher").click(function () {
-	if ($(".nav-item.active").attr("id") != "home")
-        return
-
-	$(".tiling_window#IDE, .tiling_window#Console").toggle()
-	$(".tiling_window#Terminal").toggle()
-
-});
-
-
-//nav bar click event
-$(".nav-item").each(function (i, obj) {
-
-
-	$(`#${obj.id}`).click(function () {
-
-		$("#home-switcher").hide()
-
-		//update selector position
-		$('#navbarSupportedContent ul li').removeClass("active");
-		$(this).addClass('active');
-
-		$(".hori-selector").css({
-			"top": $(this).position().top + "px",
-			"left": $(this).position().left + "px",
-			"height": $(this).innerHeight() + "px",
-			"width": $(this).innerWidth() + "px"
-		});
-
-		//change to other tab
-		let id = obj.id
-		$("#body-content").children().each(function (i, obj) {
-			if (tabs[id].includes($(this).attr("id")))
-				$(this).css({
-					"display": ""
-				})
-			else
-				$(this).css({
-					"display": "none"
-				})
-		})
-
-		//if phone
-		if (isPhone()) {
-			// full size terminal, disabling windows on purpose
-			$(".tiling_window#Terminal").css({
-				"width": "auto"
-			})
-
-			$(".tiling_window#IDE, .tiling_window#Console").hide()
-			
-			if(id == "home")
-				$("#home-switcher").show()
-		}
-	})
-})
-
-
-
-
-
-
-// Add active class on another page linked
-// ==========================================
-// $(window).on('load',function () {
-//     var current = location.pathname;
-//     console.log(current);
-//     $('#navbarSupportedContent ul li a').each(function(){
-//         var $this = $(this);
-//         // if the current path is like this link, make it active
-//         if($this.attr('href').indexOf(current) !== -1){
-//             $this.parent().addClass('active');
-//             $this.parents('.menu-submenu').addClass('show-dropdown');
-//             $this.parents('.menu-submenu').parent().addClass('active');
-//         }else{
-//             $this.parent().removeClass('active');
-//         }
-//     })
-// });

@@ -16,16 +16,15 @@ let cmds = [
         "description": "Restart OS",
     },
     {
-        "name": "neofetch",
+        "name": "whoami",
         "description": "a command-line system information tool",
         "output": `
-<div>&nbsp;</div>
-<div>&nbsp;&nbsp;&nbsp;&nbsp;██████╗&nbsp;&nbsp;&nbsp;██╗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="theme_text_Teal">Faewulf</span>@<span class="theme_text_Green">OpenGiaLam</span></div>
-<div>&nbsp;██╔════╝&nbsp;&nbsp;&nbsp;██║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- - - - - - - - - - - - - - - - - - -</div></div>
-<div>&nbsp;██║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;███╗██║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="theme_text_Green b1">Datetime:</span> ${new Date().toLocaleTimeString()}</div>
-<div>&nbsp;██║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██║██║&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="theme_text_Green b1">OS:</span> HTML x JavaScript</div>
-<div>&nbsp;╚██████╔╝███████╗&nbsp;<span class="theme_text_Green b1">Kernel:</span>  v2.01</div>
-<div>&nbsp;</div>
+        <pre style="font-size:20px">
+
+ He/him, from Vietnam ♥
+ ~want to learn to code everything
+ sleep, enjoy musics~	
+        </pre>
         `
     },
     {
@@ -33,7 +32,7 @@ let cmds = [
         "description": "My current pc spec",
         "output": `
 <div>&nbsp;</div>
-<pre><span class="theme_text_Teal">System</span> <> <span class="theme_text_Green">Fetcher</span></pre>
+<pre><span class="theme_text_Teal">My</span> <> <span class="theme_text_Green">Spec</span></pre>
 <pre><span class="theme_text_Teal b1">-------------</span></pre>
 <pre><span class="theme_text_Teal b1">Host: </span>LENOVO 82AU</pre>
 <pre><span class="theme_text_Teal b1">Kernel: </span>10.0.22000.0</pre>
@@ -50,34 +49,26 @@ let cmds = [
         "description": "My ultimate contact",
         "output": `
 <div>&nbsp;</div>
-<div>&nbsp;Behold: </div>
-<pre>                 ${website}</pre>
-<pre>                   ^</pre>
-<pre>                   |</pre>
-<pre>              +----+----+</pre>
-<pre>              |         |</pre>
-<pre>      contact@faewulf.xyz</pre>
-<pre>      |          |      |</pre>
-<pre>      +---+------+------+</pre>
-<pre>          |      |</pre>
-<pre>          v      | +---------+</pre>
-<pre>        ${email}    +>|${github}   |</pre>
-<pre>                   |${discord}  |</pre>
-<pre>                   |${steam}    |</pre>
-<pre>                   |${minecraft}|</pre>
-<pre>                   |${youtube}  |</pre>
-<pre>                   +---------+</pre>
-<div>&nbsp;</div>
+<pre> Behold:</pre>
+<pre>  </pre>
+<pre>   contact@faewulf.xyz</pre>
+<pre>   |          |      |</pre>
+<pre>   +---+------+------+</pre>
+<pre>       |      |</pre>
+<pre>       v      |</pre> 
+<pre>    ${email}   +> ${github}</pre>
+<pre>                ${discord}</pre>
+<pre>                ${steam}</pre>
+<pre>                ${minecraft}</pre>
+<pre>                ${youtube}</pre>
 <pre>Extra</pre>
-<pre>&nbsp;&nbsp;&nbsp;<span class="theme_text_Green b1">Facebook:</span> <a class="tlink" href=\"https://www.facebook.com/ForestOfCorn/\" target='_blank'>ForestOfCorn</a></pre>
+<pre>&nbsp;&nbsp;&nbsp;<i class="fab fa-facebook"/><span class="theme_text_Green b1">Facebook:</span> <a class="tlink" href=\"https://www.facebook.com/ForestOfCorn/\" target='_blank'>ForestOfCorn</a></pre>
 <pre>&nbsp;</pre>
         `
     },
-
     {
-        "name": "lmao",
-        "description": "bad joke warning",
-        "output": `<div>F*ckHCH</div>`
+        "name": "projects",
+        "description": "<pre>All my personal projects</pre>"
     },
     {
         "name": "git",
@@ -116,11 +107,15 @@ function trigger() {
             succeed = true;
         }
 
+        if (cmd == "projects") {
+            location.hash = "#projects"
+            succeed = true;
+        }
+
         if (cmd == "bonsai") {
 
             //disable donut an clear Konvas screen
-            k_clearScreen()
-            $(".tiling_window>canvas#Konsole").removeClass("active")
+            //k_clearScreen()
 
 
             let vars = input.toLowerCase().trim().split(' ').slice(1)
@@ -135,7 +130,7 @@ function trigger() {
 
  Argument list:
                         </pre>`)
-                        printLine(`<pre>  -<span class="theme_text_Green">l value :</span> live mode (default value: 30)</pre>`, false)
+                        printLine(`<pre>  -<span class="theme_text_Green">l value :</span> grow speed (default value: 30)</pre>`, false)
                         printLine(`<pre>  -<span class="theme_text_Green">s value :</span> set seed, pass "random" for randomness</pre>`, false)
                         printLine(`<pre>  -<span class="theme_text_Green">i :</span> grow other bonsai when finished</pre>`, false)
                         printLine(`<pre> </pre>`, false)
@@ -164,14 +159,29 @@ function trigger() {
 
 
             if (!stop) {
-                clearInterval(growLoop)
+                //stop current buffer
+                $("canvas#Konsole.active").removeClass("active")
+                $("#drawBuffer.active").removeClass("active")
                 b_stop()
 
+                printLine("")
+                if (vars.length == 0)
+                    printLine(`<pre> Using default settings... 
+ bonsai -h for help.</pre>`, false)
+                printLine(`<pre> Growing...</pre>`, false)
+                $("section.terminal").append(`<div id="drawBuffer" class="active"></div>`)
+                printLine("", false)
+
+
+                $("#drawbuffer.active").ready(function(){
+                    konsoleInit()
+                })
+
+                clearInterval(growLoop)
                 growLoop = setInterval(() => {
 
                     if (!infGrow)
                         clearInterval(growLoop)
-
 
                     if (ready2Grow) {
                         clearScreen()
@@ -180,10 +190,6 @@ function trigger() {
                     }
 
                 }, 2000)
-                printLine(`<pre> Growing...</pre>`)
-                if (vars.length == 0)
-                    printLine(`<pre> Using default settings... 
- bonsai -h for help.</pre>`, false)
             }
 
             succeed = true
@@ -194,15 +200,19 @@ function trigger() {
             clearInterval(growLoop)
             b_stop()
 
-            //konsole clear screen
-            clearScreen()
-
-            $(".tiling_window>canvas#Konsole").addClass("active")
+            $("canvas#Konsole.active").removeClass("active")
+            $("#drawBuffer.active").removeClass("active")
 
             printLine(` 
             <div>&nbsp;</div>
             <div> Donuting...</div>
             `)
+            $("section.terminal").append(`<canvas id="Konsole" class="active" style="height:400px;width:400px"></div>`)
+            $("canvas#Konsole.active").ready(function() {
+                konvasInit()
+            })
+            printLine("",false)
+            
 
             succeed = true
         }
@@ -244,12 +254,6 @@ function trigger() {
 document.addEventListener("keydown", function (e) {
     e || window.event;
     const key = e.key;
-
-    if ($(".nav-item.active").attr("id") != "home")
-        return
-
-    if (!ready)
-        return
 
     if (e.ctrlKey || e.metaKey || e.altKey)
         return;
@@ -318,18 +322,13 @@ function printLine(str, keepInput = true) {
     })
     //scroll to bottom
 
-    $("#Terminal").animate({ scrollTop: $(".terminal").prop("scrollHeight") }, 300);
+    $(".main_window").animate({ scrollTop: $(".terminal").prop("scrollHeight") }, 300);
 }
-
-$("#Terminal").click(function () {
-    ready = true
-})
-
 
 //init
 $(document).ready(function () {
     bufferer();
-    let strings = ["neofetch", "contact"]
+    let strings = ["whoami", "contact"]
     let time = 1000
 
     strings.forEach(string => {

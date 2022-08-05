@@ -1,119 +1,84 @@
-$("#audioInput").change(function () {
-    var files = this.files;
-    audio.src = URL.createObjectURL(files[0]);
-    audio.load();
-    audio.play();
-    var context = new AudioContext();
-    var src = context.createMediaElementSource(audio);
-    var analyser = context.createAnalyser();
+let playState = false
 
-    var canvas = document.getElementById("visualizer");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+let firstTime = true
+$("#vis_play").click(function () {
 
-    var ctx = canvas.getContext("2d");
+    if (firstTime) {
+        playState = true
+        $("#vis_play").text("◍")
+        //var files = this.files;
+        //audio.src = URL.createObjectURL(files[0]);
+        audio.src = "./assests/music1.mp3";
+        audio.load();
+        audio.play();
+        var context = new AudioContext();
+        var src = context.createMediaElementSource(audio);
+        var analyser = context.createAnalyser();
 
-    src.connect(analyser);
-    analyser.connect(context.destination);
+        var canvas = document.getElementById("visualizer");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-    analyser.fftSize = 4096;
+        var ctx = canvas.getContext("2d");
 
-    var bufferLength = analyser.frequencyBinCount;
+        src.connect(analyser);
+        analyser.connect(context.destination);
 
-    var dataArray = new Uint8Array(bufferLength);
+        analyser.fftSize = 4096;
 
-    var WIDTH = canvas.width;
-    var HEIGHT = canvas.height;
+        var bufferLength = analyser.frequencyBinCount;
+
+        var dataArray = new Uint8Array(bufferLength);
+
+        var WIDTH = canvas.width;
+        var HEIGHT = canvas.height;
 
 
-    var barWidth = 100;
-    var barHeight;
-    var x = 0;
+        var barWidth = _isPhone ? 20 : 50;
+        var barHeight;
+        var x = 0;
 
-    function renderFrame() {
-        requestAnimationFrame(renderFrame);
-        x = 0;
-        analyser.getByteFrequencyData(dataArray);
+        function renderFrame() {
+            requestAnimationFrame(renderFrame);
+            x = 0;
+            analyser.getByteFrequencyData(dataArray);
 
-        ctx.fillStyle = "#000";
-        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+            ctx.fillStyle = "#000";
+            ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
-        let jumpSize = Math.floor(bufferLength / barWidth)
+            let jumpSize = Math.floor(bufferLength / barWidth)
 
-        for (var i = 0; i < bufferLength; i += jumpSize ) {
-            barHeight = dataArray[i] * 2;
+            for (var i = 0; i < bufferLength; i += jumpSize) {
+                barHeight = dataArray[i] * 2;
 
-            var r = 198;
-            var g = 160;
-            var b = 246;
+                var r = 198;
+                var g = 160;
+                var b = 246;
 
-            ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-            ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+                ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+                ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
 
-            x += barWidth + 50;
+                x += barWidth + (_isPhone ? 20 : 50);
+            }
         }
+
+        audio.play();
+        renderFrame();
+
+
+        firstTime = false
+        return
     }
 
-    audio.play();
-    renderFrame();
-});
 
-//init
-$("#premusic").click(function() {
-
-    audio.src = "./assests/music.mp3"
-    audio.load();
-    audio.play();
-    var context = new AudioContext();
-    var src = context.createMediaElementSource(audio);
-    var analyser = context.createAnalyser();
-
-    var canvas = document.getElementById("visualizer");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    var ctx = canvas.getContext("2d");
-
-    src.connect(analyser);
-    analyser.connect(context.destination);
-
-    analyser.fftSize = 4096;
-
-    var bufferLength = analyser.frequencyBinCount;
-
-    var dataArray = new Uint8Array(bufferLength);
-
-    var WIDTH = canvas.width;
-    var HEIGHT = canvas.height;
-
-
-    var barWidth = 100;
-    var barHeight;
-    var x = 0;
-
-    function renderFrame() {
-        requestAnimationFrame(renderFrame);
-        x = 0;
-        analyser.getByteFrequencyData(dataArray);
-
-        ctx.fillStyle = "#000";
-        ctx.clearRect(0, 0, WIDTH, HEIGHT);
-
-        let jumpSize = Math.floor(bufferLength / barWidth)
-
-        for (var i = 0; i < bufferLength; i += jumpSize ) {
-            barHeight = dataArray[i] * 2;
-
-            var r = 198;
-            var g = 160;
-            var b = 246;
-
-            ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-            ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-
-            x += barWidth + 50;
-        }
+    if (playState) {
+        $(this).text("▶")
+        audio.pause()
+        playState = !playState
     }
-
-    audio.play();
-    renderFrame();
+    else {
+        $(this).text("◍")
+        audio.play()
+        playState = !playState
+    }
 })

@@ -1,3 +1,57 @@
+div#vis {
+    position: absolute; 
+    display: inline-block;
+    width: 344px;
+    height: 97px;
+    z-index: 0;
+}
+
+div#vis_play {
+    position: absolute; 
+    font-size: 15px;
+    bottom: -2px;
+    user-select: none;
+    -webkit-user-select: none;  
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+}
+
+div#vis_text {
+    position: absolute;
+    bottom: -5px;
+    left: 18px;
+    width: 130px;
+    height: 20px;
+    overflow: hidden;
+}
+
+div#vis_text>div {
+    font-size: 13px;
+    white-space: nowrap;
+    animation: moving_text 15s linear infinite;
+    --length : 100%;
+    --lengthx2 : 200%
+}
+
+@keyframes moving_text {
+    0% {
+        transform: translateX(var(--length));
+    }
+    
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+section.visual {
+    position: absolute;
+    z-index: 0;
+    height: 90%;
+    min-width: 300px;
+    max-width: 800px;
+}
+
+
 input#audioInput {
     display: none;
 }
@@ -5,27 +59,16 @@ input#audioInput {
 audio#audio {
     position: absolute;
     height: 30px;
-    width: 90%;
+    width: 30%;
     bottom: 5px;
-}
-
-div#VisualizerMain {
-    position: absolute;
-    margin: 10px;
-    white-space: nowrap;
-    height: 175px;
-    width: 375px;
-    overflow: hidden;
-    z-index: 1;
-    top: 0px;
 }
 
 #visualizer {
     position: absolute;
-    width: 95%;
-    height: 80%;
-    left: 10px;
-    bottom: 50px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    opacity: 0.2;
 }
 
 button#getFile {
@@ -36,11 +79,3 @@ button#getFile {
     cursor: pointer;
 }
 
-.vbutton {
-    position: absolute;
-    border: none;
-    left: 4px;
-    top: 7px;
-    cursor: pointer;
-    z-index: 1;
-}
