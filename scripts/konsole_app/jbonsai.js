@@ -239,7 +239,7 @@ function branch(y, x, type, life) {
                 let chooseBranch = [
                     "shootLeft",
                     "shootRight",
-                    "trunk",
+                    //"trunk",
                 ]
                 branch(y, x, chooseBranch[rollDice(2) - 1], shootLife);
             }
@@ -336,6 +336,8 @@ function drawBase(baseType = 1) {
 
 function growTree() {
 
+    console.log(maxX +" x " + maxY)
+
     if(config.seed != "random") {
         seed(config.seed)
     }
@@ -361,6 +363,7 @@ function b_stop() {
     setTimeOuts = []
     config.stop = true
     ready2Grow = true
+    $("#drawBuffer.active").removeClass("active")
 }
 
 function getConfig() {

@@ -1,11 +1,33 @@
 let c_maxX = 0, c_maxY = 0
-let konvas = $(".tiling_window>canvas#Konsole")[0]
-let ctx = konvas.getContext("2d")
+let konvas
+let ctx 
 const font_size = 15
 const offsetY = 0
 const offsetX = 0.2
 
-$(".tiling_window>canvas#Konsole").ready(function () {
+$(document).ready(function(){
+    let x = 0,
+        y = 0
+    function step(F) {
+        if ($("canvas#Konsole.active").length) {
+            if (x == 1) x = 0
+            if (y == 1) y = 0
+            k_clearScreen()
+            donutRender(x, y)
+            x += 0.02
+            y += 0.01
+
+        }
+        window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+})
+
+
+function konvasInit() {
+
+    konvas = $("canvas#Konsole.active")[0]
+    ctx = konvas.getContext("2d")
 
     konvas.width = konvas.clientWidth
     konvas.height = konvas.clientHeight
@@ -17,30 +39,15 @@ $(".tiling_window>canvas#Konsole").ready(function () {
     //console.log(c_maxX + "x" + c_maxY)
 
 
-    let x = 0,
-        y = 0
 
-    function step(F) {
-
-        if ($(".tiling_window>canvas#Konsole").hasClass("active")) {
-            if (x == 1) x = 0
-            if (y == 1) y = 0
-
-            k_clearScreen()
-            donutRender(x, y)
-            x += 0.02
-            y += 0.01
-
-        }
-        window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
-
-
-})
+}
 
 $(window).on('resize', function () {
-    let konvas = $(".tiling_window>canvas#Konsole")[0]
+    let konvas = $("canvas#Konsole.active")[0]
+
+    if(!konvas)
+        return
+
     konvas.width = konvas.clientWidth
     konvas.height = konvas.clientHeight
 

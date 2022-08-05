@@ -17,14 +17,14 @@ function checkOverflow(el) {
 function clearScreen() {
     for (var i = 0; i < maxY; i++)
         for (var j = 0; j < maxX; j++) {
-            let pixel = $(`#Konsole_${j}_${i}`)
+            let pixel = $(`#drawBuffer.active #Konsole_${j}_${i}`)
             pixel.removeClass()
             pixel.text(" ")
         }
 }
 
 function getAt(x, y) {
-    let el = $(`#Konsole_${x}_${y}`)
+    let el = $(`#drawBuffer.active #Konsole_${x}_${y}`)
     if (el)
         return el.text()
 
@@ -34,12 +34,12 @@ function getAt(x, y) {
 function drawAt(x, y, char, color) {
 
     if (x < 0 || x >= maxX || y < 0 || y >= maxY)
-        return console.log("[Error] Konsole: cannot draw " + char + "at (" + x + ";" + y + ")")
+        return //console.log("[Error] Konsole: cannot draw " + char + "at (" + x + ";" + y + ")")
 
     //y = maxY - 1 - y
 
     if (char.length == 1) {
-        let el = $(`#Konsole_${x}_${y}`)
+        let el = $(`#drawBuffer.active #Konsole_${x}_${y}`)
         el.text(char)
         el.removeClass()
         el.addClass(`theme_text_${color}`)
@@ -47,7 +47,7 @@ function drawAt(x, y, char, color) {
     else {
         for (let index = 0; index < char.length; index++) {
 
-            let el = $(`#Konsole_${x + index}_${y}`)
+            let el = $(`#drawBuffer.active #Konsole_${x + index}_${y}`)
 
             if (!el)
                 continue
@@ -59,13 +59,14 @@ function drawAt(x, y, char, color) {
     }
 }
 
-$(".tiling_window#Console").ready(function () {
-    let Konsole = $(".tiling_window#Console")
+function konsoleInit() {
+    let Konsole = $("#drawBuffer.active")
+    maxX = 0, maxY = 0
 
     //get konsole max size
     while (!checkOverflow(Konsole[0])) {
         if(isPhone() || maxY > 100) {
-            maxY = 26
+            maxY = 21   
             break
         }   
 
@@ -74,14 +75,14 @@ $(".tiling_window#Console").ready(function () {
     }
     maxY--
 
-    $(".tiling_window#Console>pre").remove()
+    $("#drawBuffer.active>pre").remove()
     let dummy = ""
 
     Konsole.append(`<pre id="flowTest">${dummy}</pre>`)
     while (!checkOverflow(Konsole[0])) {
 
-        if(isPhone() || maxX > 100) {
-            maxX = 56
+        if(_isPhone || maxX > 100) {
+            maxX = 40
             break
         }
 
@@ -90,7 +91,7 @@ $(".tiling_window#Console").ready(function () {
         maxX++
     }
     maxX--
-    $(".tiling_window#Console>pre").remove()
+    $("#drawBuffer.active>pre").remove()
 
     for (let y = 0; y < maxY; y++) {
         let dummyEl = ""
@@ -99,26 +100,4 @@ $(".tiling_window#Console").ready(function () {
         }
         Konsole.append(`<pre>${dummyEl}</pre>`)
     }
-    //ready
-
-    //bonsai
-
-    clearScreen()
-    growTree()
-
-    /*
-    let x = 0, y = 0
-    let checkScreen = setInterval(() => {
-        if (x == maxX) {
-            y++
-            x = 0
-        }
-        if (y == maxY) {
-            clearInterval(checkScreen)
-            return
-        }
-        drawAt(x, y, "-", "Red")
-        x++
-    }, 1)
-    */
-})
+}
