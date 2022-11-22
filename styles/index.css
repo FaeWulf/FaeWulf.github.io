@@ -10,7 +10,7 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 
-  background-color: rgb(var(--Mantle));
+  background-color: rgb(var(--Crust));
   color: rgb(var(--Text));
 }
 
@@ -136,7 +136,6 @@ img.social {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-
 /*
 *  screen responsive
 * */
@@ -145,5 +144,8 @@ img.social {
   .container {
     width: 80%;
   }
+
+  #console {
+    width: 80%; }
 }
 
