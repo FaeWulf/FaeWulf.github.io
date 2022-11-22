@@ -1,0 +1,7 @@
+#console {
+  border: 1px red solid;
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  width: 350px;
+  height: 200px;
+}

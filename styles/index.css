@@ -129,7 +129,7 @@ img.social {
 }
 
 .container>div:hover .tooltip {
-  top: -55px;
+  top: -40px;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
