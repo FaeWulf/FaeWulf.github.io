@@ -1,0 +1,8 @@
+.title>span {
+  white-space: pre;
+}
+
+#title-discord, #title-email, #title-url, #title-github{
+  display: none;
+}
+

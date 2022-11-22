@@ -11,27 +11,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Cantarell&family=Fira+Sans:wght@300;400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/styles/index.css" />
+  <link rel="stylesheet" href="/styles/socials.css" />
   <title>Faewulf's Basement</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js" type="text/javascript"></script-->
+
 </head>
 
 <body>
 
   <div class="body">
     <img class="logo" src="assests/logo.jpg" />
-    <h1 class="title">I am Faewulf</h1>
+    <div class="title">
+      <span id="title-Iam">I am </span>
+      <span id="title-email">contact@</span>
+      <span id="title-github">github.com/</span>
+      <span>Faewulf</span>
+      <span id="title-url">.xyz</span>
+      <span id="title-discord">#0901</span>
+    </div>
     <h2 class="subtitle">An inexperience developer on the sofa :) </h2>
 
+    <h2>Find me on</h2>
 
-    <h2>Find me on </h2>
     <div class="container">
-      <img class="social" src="assests/svgs/github.svg" width="38" height="38" />
-      <img class="social" src="assests/svgs/discord.svg" width="38" height="38" />
-      <img class="social" src="assests/svgs/youtube.svg" width="38" height="38" />
-      <img class="social" src="assests/svgs/facebook.svg" width="38" height="38" />
-      <img class="social" src="assests/svgs/steam.svg" width="38" height="38" />
+      <img title="My web" class="social" id="homepage" src="assests/svgs/homepage.svg" width="38" height="38" />
+      <img class="social" id="email" src="assests/svgs/email.svg" width="38" height="38" />
+      <img class="social" id="github" src="assests/svgs/github.svg" width="38" height="38" />
+      <img class="social" id="discord" src="assests/svgs/discord.svg" width="38" height="38" />
+      <img class="social" id="youtube" src="assests/svgs/youtube.svg" width="38" height="38" />
+      <img class="social" id="facebook" src="assests/svgs/facebook.svg" width="38" height="38" />
+      <img class="social" id="steam" src="assests/svgs/steam.svg" width="38" height="38" />
     </div>
   </div>
+
+  <script src="scripts/jquery-3.6.1.js" type="text/javascript"></script>
+  <script src="scripts/index.js" type="text/javascript"></script>
 </body>
 
 </html>
