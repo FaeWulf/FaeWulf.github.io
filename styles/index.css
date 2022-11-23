@@ -43,6 +43,24 @@ body {
   align-items: center;
 }
 
+.container>div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgb(var(--Base));
+  transition: .3s;
+  transform: scale(.9);
+  z-index: -2;
+}
+
+.container>div:hover::before {
+  transform: scale(1);
+  box-shadow: 0 0 15px #ffee10;
+}
 
 
 /*
@@ -87,12 +105,15 @@ h2 {
 * */
 
 img.social {
+  position: relative;
   filter: invert(42%) sepia(21%) saturate(5849%) hue-rotate(170deg) brightness(106%) contrast(97%);
   cursor: pointer;
   padding: 5px;
   transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
 }
+
+
 
 .container>div:hover .social { 
   transform: scale(1.25);
