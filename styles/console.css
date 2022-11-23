@@ -34,11 +34,12 @@
 .header {
   flex-basis: 100%;
   text-align: center;
-  margin-top: 10px;
-  
   background-color: rgb(var(--Base));
   border: 1px rgba(var(--Text), 0.2) solid;
   border-radius: 5px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /*
@@ -52,7 +53,7 @@
   width: 390px;
   height: 200px;
 
-  border: 1px red solid;
+  border: 1px rgba(var(--Text), 0.2) solid;
 
   display: flex;
   flex-direction: column;
@@ -60,6 +61,7 @@
 
   padding: 5px;
 
-  overflow: auto;
+  overflow-x: auto;
+  overflow-x: hidden;
 }
 
