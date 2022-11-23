@@ -15,8 +15,7 @@ $(document).ready(function() {
   $(".social#youtube, .social#facebook, .social#steam").hover(
     function() {
       $(".title>#title-Iam").stop(true, false).animate({ "width": 'toggle' })
-    },
-    function() {
+    }, function() {
       $(".title>#title-Iam").stop(true, false).animate({ "width": 'toggle' })
     }
   )
