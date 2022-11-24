@@ -59,7 +59,7 @@ body {
 
 .container>div:hover::before {
   transform: scale(1);
-  box-shadow: 0 0 15px #ffee10;
+  box-shadow: 0 0 8px #ffee10;
 }
 
 
@@ -91,7 +91,7 @@ img.logo {
   border-radius: 50%;
   z-index: -1;
   transform: scale(1);
-  filter: blur(20px);
+  filter: blur(15px);
 
   background: linear-gradient(90deg, #0fffc1, #7e0fff);
   background-size: 200% 200%;
@@ -131,6 +131,14 @@ img.logo {
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+.title>span {
+  white-space: pre;
+}
+
+/*
+* Subtitle
+* */
+
 .subtitle {
   font-weight: 400;
   font-size: 1.1rem;
@@ -138,6 +146,15 @@ img.logo {
   margin-top: -1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
+
+  display: flex;
+  justify-content: center;
+
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.subtitle>span {
+  white-space: pre;
 }
 
 h2 {
@@ -145,13 +162,15 @@ h2 {
   margin-bottom: 1.2rem;
 }
 
+#subtitle-novice, #subtitle-proficient, #subtitle-advanced-beginner, #subtitle-competent {
+  display: none;
+}
+
 /*
 *     social logo imgs
 * */
 
-.title>span {
-  white-space: pre;
-}
+
 
 #title-discord, #title-email, #title-url, #title-github{
   display: none;
@@ -212,12 +231,13 @@ img.social {
 *  screen responsive
 * */
 
-@media only screen and (max-width: 400) {
+@media only screen and (max-width: 400px) {
+
   .container {
     width: 80%;
   }
 
   #console {
-    width: 80%; }
+    width: 90%; 
+  }
 }
-

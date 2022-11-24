@@ -1,5 +1,41 @@
 .hueText {
-  background: linear-gradient(120deg, #4fe49c, #45abd6, #4fe49c);
+  background: linear-gradient(120deg, #ff1b6b, #45caff, #ff1b6b);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hue 3s linear infinite;
+}
+
+.hueText-green {
+  background: linear-gradient(120deg, #00ff87, #60efff, #00ff87);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hue 3s linear infinite;
+}
+
+.hueText-blue {
+  background: linear-gradient(120deg, #0061ff, #60efff, #0061ff);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hue 3s linear infinite;
+}
+
+.hueText-purple {
+  background: linear-gradient(120deg, #40c9ff, #e81cff, #40c9ff);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hue 3s linear infinite;
+}
+
+.hueText-red {
+  background: linear-gradient(120deg, #ff0f7b, #f89b29, #ff0f7b);
   background-size: 200%;
   -webkit-background-clip: text;
   background-clip: text;
