@@ -67,11 +67,56 @@ body {
 * Elements
 * */
 
+/*
+* Logo part
+* */
+
+.logo-wrapper {
+  position: relative;
+}
+
 img.logo {
   border-radius: 50%;
   width: 200px;
-  margin-bottom: 1.5rem;
+  height: 200px;
 }
+
+.logo-wrapper .logo-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(1);
+  filter: blur(20px);
+
+  background: linear-gradient(90deg, #0fffc1, #7e0fff);
+  background-size: 200% 200%;
+
+  animation: animateBackground 10s ease infinite;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.5;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+}
+
+/*
+* title
+* */
 
 .title {
   font-weight: 600;
@@ -104,6 +149,14 @@ h2 {
 *     social logo imgs
 * */
 
+.title>span {
+  white-space: pre;
+}
+
+#title-discord, #title-email, #title-url, #title-github{
+  display: none;
+}
+
 img.social {
   position: relative;
   filter: invert(42%) sepia(21%) saturate(5849%) hue-rotate(170deg) brightness(106%) contrast(97%);
@@ -112,8 +165,6 @@ img.social {
   transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
 }
-
-
 
 .container>div:hover .social { 
   transform: scale(1.25);

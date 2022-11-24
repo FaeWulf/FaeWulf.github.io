@@ -1,0 +1,17 @@
+.hueText {
+  background: linear-gradient(120deg, #4fe49c, #45abd6, #4fe49c);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hue 3s linear infinite;
+}
+
+@keyframes hue {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
