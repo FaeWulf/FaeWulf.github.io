@@ -4,11 +4,13 @@ $(document).ready(function() {
     function() {
       $(".title>#title-Iam").stop(true, false).animate({ "width": 'toggle' })
       $(".title>#title-discord").stop(true, false).animate({ "width": 'toggle' })
+      $(".title>#title-discord-prefix").stop(true, false).animate({ "width": 'toggle' })
     },
 
     function() {
       $(".title>#title-Iam").stop(true, false).animate({ "width": 'toggle' })
       $(".title>#title-discord").stop(true, false).animate({ "width": 'toggle' })
+      $(".title>#title-discord-prefix").stop(true, false).animate({ "width": 'toggle' })
     }
   )
 
@@ -58,12 +60,14 @@ $(document).ready(function() {
     }
   )
 
+  //badges hover effect
   $(".badge").hover(
     function() {
       let level = this.title.toLowerCase();
       $(`#subtitle-${level}`).stop(true, false).animate({ "width": 'toggle' })
 
-      $("#subtitle-specific").text(this.alt + " developer ")
+      if (this.alt)
+        $("#subtitle-specific").text(this.alt + " developer ")
 
       if (level != "advanced-beginner")
         $(`#subtitle-vowel`).stop(true, false).animate({ "width": 'toggle' })
