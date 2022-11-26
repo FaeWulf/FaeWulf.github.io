@@ -174,8 +174,6 @@ h2 {
 *     social logo imgs
 * */
 
-
-
 img.social {
   position: relative;
   filter: invert(29%) sepia(22%) saturate(578%) hue-rotate(196deg) brightness(97%) contrast(88%);
@@ -223,7 +221,16 @@ img.social {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/*
+* Deco
+* */
 
+img.deco {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
 
 /*
 *  screen responsive
@@ -235,7 +242,13 @@ img.social {
     width: 80%;
   }
 
-  #console {
+  #showcase {
     width: 90%; 
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  img.deco {
+    display: none;
   }
 }

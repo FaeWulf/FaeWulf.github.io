@@ -90,4 +90,11 @@ $(document).ready(function() {
     }
   )
 
+  //deco onclick 
+
+  $("img.deco").on("click", function() {
+    d = new Date();
+    $("img.deco").attr("src", "http://mc.faewulf.xyz/api/bonsai?live=true&width=500&height=500&background=false&" + d.getTime());
+  })
+
 });
